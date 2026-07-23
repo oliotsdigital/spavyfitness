@@ -25,7 +25,7 @@ export default function CategoryPage({
       <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-800 pb-4 mb-8 gap-4">
         <div>
           <h1 className="text-3xl font-black uppercase text-white tracking-wide">
-            {activeCategory === 'all' ? 'ALL PRODUCTS' : activeCategory.toUpperCase().replace('-', ' ')}
+            {(activeCategory as string) === 'all' ? 'ALL PRODUCTS' : activeCategory.toUpperCase().replace('-', ' ')}
           </h1>
           <p className="text-sm text-zinc-400 mt-2">
             Browse our full catalog of premium fitness equipment.

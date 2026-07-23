@@ -1,8 +1,7 @@
-import { Truck, MessageSquare, PhoneCall } from 'lucide-react';
+import { MessageSquare, PhoneCall } from 'lucide-react';
 import type { NavbarActionsProps } from './Navbar.types';
 
 export default function NavbarActions({
-  onOpenTracker,
   onOpenLiveChat,
   onOpenContactUs,
 }: NavbarActionsProps) {
