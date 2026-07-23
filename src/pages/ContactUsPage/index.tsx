@@ -23,12 +23,12 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="flex-1 bg-white text-zinc-900 pb-16">
+    <div className="flex-1 bg-white dark:bg-[#111111] text-zinc-900 dark:text-gray-100 pb-16 transition-colors duration-300">
       {/* Header Section */}
-      <section className="bg-zinc-50 py-20 px-4 border-b border-zinc-200">
+      <section className="bg-zinc-50 dark:bg-zinc-900/50 py-20 px-4 border-b border-zinc-200 dark:border-zinc-800 transition-colors duration-300">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-black mb-4">Get in Touch</h1>
-          <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
             Whether you're setting up a new facility, outfitting a garage gym, or need support with your order, our team is here to help.
           </p>
         </div>
@@ -45,12 +45,12 @@ export default function ContactUsPage() {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center flex-shrink-0 text-[#E5231B]">
+                  <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 text-[#E5231B]">
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Our Location</h3>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       123 Fitness Boulevard<br />
                       Suite 400<br />
                       Strength City, SC 12345
@@ -59,12 +59,12 @@ export default function ContactUsPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center flex-shrink-0 text-[#E5231B]">
+                  <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 text-[#E5231B]">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Phone Number</h3>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       1-800-SPAVY-FIT<br />
                       (1-800-772-8934)
                     </p>
@@ -72,12 +72,12 @@ export default function ContactUsPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-zinc-100 rounded-full flex items-center justify-center flex-shrink-0 text-[#E5231B]">
+                  <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center flex-shrink-0 text-[#E5231B]">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1">Email Address</h3>
-                    <p className="text-zinc-600 leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       support@spavy.com<br />
                       sales@spavy.com
                     </p>
@@ -87,7 +87,7 @@ export default function ContactUsPage() {
             </div>
 
             {/* Map */}
-            <div className="rounded-xl overflow-hidden shadow-lg border border-zinc-200 h-64 mt-8">
+            <div className="rounded-xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800 h-64 mt-8">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.00581497258992!3d40.72584100778744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598f988156a9%3A0xd54629bdf9d61d68!2sWashington%20Square%20Park!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
                 width="100%" 
@@ -103,13 +103,13 @@ export default function ContactUsPage() {
 
           {/* Contact Form Column */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-zinc-100">
+            <div className="bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-2xl shadow-xl border border-zinc-100 dark:border-zinc-800 transition-colors duration-300">
               <h2 className="text-2xl font-bold mb-8">Send Us A Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-semibold text-zinc-700">Full Name</label>
+                    <label htmlFor="name" className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300">Full Name</label>
                     <input 
                       type="text" 
                       id="name" 
@@ -117,12 +117,12 @@ export default function ContactUsPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-zinc-300 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-gray-100 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors"
                       placeholder="John Doe"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-semibold text-zinc-700">Email Address</label>
+                    <label htmlFor="email" className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300">Email Address</label>
                     <input 
                       type="email" 
                       id="email" 
@@ -130,14 +130,14 @@ export default function ContactUsPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required 
-                      className="w-full px-4 py-3 rounded-lg border border-zinc-300 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-gray-100 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="block text-sm font-semibold text-zinc-700">Subject</label>
+                  <label htmlFor="subject" className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300">Subject</label>
                   <input 
                     type="text" 
                     id="subject" 
@@ -145,13 +145,13 @@ export default function ContactUsPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-zinc-300 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-gray-100 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors"
                     placeholder="How can we help?"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="block text-sm font-semibold text-zinc-700">Message</label>
+                  <label htmlFor="message" className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300">Message</label>
                   <textarea 
                     id="message" 
                     name="message"
@@ -159,7 +159,7 @@ export default function ContactUsPage() {
                     onChange={handleChange}
                     required 
                     rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-zinc-300 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-gray-100 focus:ring-2 focus:ring-[#E5231B] focus:border-[#E5231B] outline-none transition-colors resize-none"
                     placeholder="Provide details about your inquiry..."
                   ></textarea>
                 </div>

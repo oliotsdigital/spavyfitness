@@ -22,12 +22,12 @@ export default function CategoryPage({
 
   return (
     <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-800 pb-4 mb-8 gap-4">
+      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200 dark:border-zinc-800 pb-4 mb-8 gap-4">
         <div>
-          <h1 className="text-3xl font-black uppercase text-white tracking-wide">
+          <h1 className="text-3xl font-black uppercase text-zinc-900 dark:text-white tracking-wide">
             {(activeCategory as string) === 'all' ? 'ALL PRODUCTS' : activeCategory.toUpperCase().replace('-', ' ')}
           </h1>
-          <p className="text-sm text-zinc-400 mt-2">
+          <p className="text-sm text-zinc-600 dark:text-zinc-400 mt-2">
             Browse our full catalog of premium fitness equipment.
           </p>
         </div>

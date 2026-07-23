@@ -4,7 +4,7 @@ import CategoryCollectionCard from './CategoryCollectionCard';
 export default function CategoryCollectionsSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-2xl font-black uppercase text-white tracking-wide mb-6">
+      <h2 className="text-2xl font-black uppercase text-zinc-900 dark:text-white tracking-wide mb-6">
         SPAVY CATEGORY COLLECTIONS
       </h2>
 

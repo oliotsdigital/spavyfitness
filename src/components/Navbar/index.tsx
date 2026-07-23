@@ -17,6 +17,8 @@ export default function Navbar({
   onNavigateHome,
   onNavigateAbout,
   onNavigateCategories,
+  theme,
+  toggleTheme,
 }: NavbarProps) {
   // Component state management hook
   const {
@@ -59,6 +61,8 @@ export default function Navbar({
             onOpenContactUs={handleContactUsClick}
             onNavigateAbout={onNavigateAbout}
             onNavigateCategories={onNavigateCategories}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
         </div>
 
@@ -104,6 +108,17 @@ export default function Navbar({
             >
               🗂️ Categories
             </button>
+            {theme && toggleTheme && (
+              <button
+                onClick={() => {
+                  toggleTheme();
+                  toggleMobileMenu();
+                }}
+                className="text-left text-xs font-semibold text-zinc-700 hover:text-black py-1"
+              >
+                {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
+              </button>
+            )}
             <button
               onClick={() => {
                 handleContactUsClick();

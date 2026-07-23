@@ -16,7 +16,7 @@ export default function CategoryTabs({ activeCategory, onCategoryChange }: Categ
           className={`px-4 py-2 rounded transition ${
             activeCategory === tab.id
               ? 'bg-red-600 text-white font-black'
-              : 'bg-zinc-900 text-zinc-400 hover:bg-zinc-800 hover:text-white'
+              : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-zinc-900 dark:hover:text-white'
           }`}
         >
           {tab.label}

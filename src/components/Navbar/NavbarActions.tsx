@@ -1,10 +1,12 @@
-import { PhoneCall, Info, Grid } from 'lucide-react';
+import { PhoneCall, Info, Grid, Sun, Moon } from 'lucide-react';
 import type { NavbarActionsProps } from './Navbar.types';
 
 export default function NavbarActions({
   onOpenContactUs,
   onNavigateAbout,
   onNavigateCategories,
+  theme,
+  toggleTheme,
 }: NavbarActionsProps) {
   return (
     <div className="flex items-center space-x-6 text-xs text-zinc-700 font-semibold">
@@ -25,6 +27,17 @@ export default function NavbarActions({
         <Grid className="w-4 h-4 text-zinc-600" />
         <span>Categories</span>
       </button>
+
+      {/* Theme Toggle */}
+      {theme && toggleTheme && (
+        <button
+          onClick={toggleTheme}
+          className="flex items-center space-x-1.5 hover:text-black transition-colors duration-150 focus:outline-none"
+          aria-label="Toggle Theme"
+        >
+          {theme === 'dark' ? <Sun className="w-4 h-4 text-zinc-600" /> : <Moon className="w-4 h-4 text-zinc-600" />}
+        </button>
+      )}
 
       {/* Contact Us Red Button */}
       <button

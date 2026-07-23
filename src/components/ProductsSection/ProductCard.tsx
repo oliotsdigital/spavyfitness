@@ -17,9 +17,9 @@ export default function ProductCard({
   variant = 'landing',
 }: ProductCardProps) {
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden group hover:border-zinc-600 transition duration-300 flex flex-col justify-between">
+    <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden group hover:border-zinc-400 dark:hover:border-zinc-600 transition duration-300 flex flex-col justify-between shadow-sm">
       <div>
-        <div className="relative h-64 overflow-hidden bg-black flex items-center justify-center p-4">
+        <div className="relative h-64 overflow-hidden bg-zinc-100 dark:bg-black flex items-center justify-center p-4">
           <img
             src={product.image}
             alt={product.name}
@@ -31,23 +31,23 @@ export default function ProductCard({
         </div>
 
         <div className="p-4 space-y-2">
-          <div className="flex items-center text-amber-400 text-xs gap-1">
-            <Star className="w-3.5 h-3.5 fill-amber-400" />
+          <div className="flex items-center text-amber-500 dark:text-amber-400 text-xs gap-1">
+            <Star className="w-3.5 h-3.5 fill-amber-500 dark:fill-amber-400" />
             <span className="font-bold">{product.rating}</span>
-            <span className="text-zinc-500">({product.reviews})</span>
+            <span className="text-zinc-400 dark:text-zinc-500">({product.reviews})</span>
           </div>
 
-          <h3 className="font-extrabold text-white text-base group-hover:text-red-500 transition line-clamp-1">
+          <h3 className="font-extrabold text-zinc-900 dark:text-white text-base group-hover:text-red-600 dark:group-hover:text-red-500 transition line-clamp-1">
             {product.name}
           </h3>
 
-          <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">{product.description}</p>
+          <p className="text-xs text-zinc-600 dark:text-zinc-400 line-clamp-2 leading-relaxed">{product.description}</p>
         </div>
       </div>
 
       <div className="p-4 pt-0 space-y-3">
         <div className="flex items-baseline space-x-2">
-          <span className="text-xl font-black text-white">{product.price}</span>
+          <span className="text-xl font-black text-zinc-900 dark:text-white">{product.price}</span>
           <span className="text-xs text-zinc-500 font-mono">({product.usdPrice})</span>
         </div>
 
@@ -55,7 +55,7 @@ export default function ProductCard({
           {variant === 'landing' ? (
             <button
               onClick={() => onViewMore && onViewMore(product)}
-              className="w-full bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-bold text-xs py-2 rounded transition"
+              className="w-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-white font-bold text-xs py-2 rounded transition"
             >
               View More
             </button>
@@ -63,7 +63,7 @@ export default function ProductCard({
             <>
               <button
                 onClick={() => onQuickView(product)}
-                className="w-1/2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-bold text-xs py-2 rounded transition"
+                className="w-1/2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-white font-bold text-xs py-2 rounded transition"
               >
                 View
               </button>

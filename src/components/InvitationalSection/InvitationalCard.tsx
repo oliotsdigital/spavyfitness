@@ -6,22 +6,22 @@ export default function InvitationalCard() {
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 p-8 rounded-xl relative">
-      <span className="text-xs font-extrabold text-red-500 uppercase tracking-widest">
+    <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-8 rounded-xl relative shadow-sm">
+      <span className="text-xs font-extrabold text-red-600 dark:text-red-500 uppercase tracking-widest">
         GLOBAL ATHLETICS PROGRAM
       </span>
-      <h3 className="text-3xl font-black text-white uppercase mt-2 italic">2026 SPAVY INVITATIONAL</h3>
-      <p className="text-xs text-zinc-400 mt-2">
+      <h3 className="text-3xl font-black text-zinc-900 dark:text-white uppercase mt-2 italic">2026 SPAVY INVITATIONAL</h3>
+      <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-2">
         Returning for our annual flagship strength showdown in Aberdeen &amp; Mumbai.
       </p>
 
       <div className="mt-6 space-y-3">
-        <div className="flex items-center text-xs text-zinc-300 gap-2">
-          <Calendar className="w-4 h-4 text-red-500" />
+        <div className="flex items-center text-xs text-zinc-700 dark:text-zinc-300 gap-2">
+          <Calendar className="w-4 h-4 text-red-600 dark:text-red-500" />
           <span>October 23 - 25, 2026</span>
         </div>
-        <div className="flex items-center text-xs text-zinc-300 gap-2">
-          <MapPin className="w-4 h-4 text-red-500" />
+        <div className="flex items-center text-xs text-zinc-700 dark:text-zinc-300 gap-2">
+          <MapPin className="w-4 h-4 text-red-600 dark:text-red-500" />
           <span>Spavy Athletic Arena &amp; Convention Center</span>
         </div>
       </div>

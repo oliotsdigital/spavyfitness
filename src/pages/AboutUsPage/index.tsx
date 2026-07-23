@@ -2,7 +2,7 @@ import { Users, Target, Shield, Zap } from 'lucide-react';
 
 export default function AboutUsPage() {
   return (
-    <div className="flex-1 bg-white text-zinc-900 pb-16">
+    <div className="flex-1 bg-white dark:bg-[#111111] text-zinc-900 dark:text-gray-100 pb-16 transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative w-full h-[40vh] min-h-[400px] flex items-center justify-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -29,15 +29,15 @@ export default function AboutUsPage() {
           <div>
             <h2 className="text-sm font-bold tracking-widest text-[#E5231B] uppercase mb-3">Our Mission</h2>
             <h3 className="text-3xl md:text-4xl font-extrabold mb-6">Forging better athletes through superior equipment.</h3>
-            <p className="text-zinc-600 mb-6 text-lg leading-relaxed">
+            <p className="text-zinc-600 dark:text-zinc-400 mb-6 text-lg leading-relaxed">
               Founded on the belief that quality equipment is the foundation of a great workout, Spavy is dedicated to providing high-performance strength and conditioning gear to commercial facilities, home gyms, and elite training centers worldwide.
             </p>
-            <p className="text-zinc-600 text-lg leading-relaxed">
+            <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
               Every barbell, rack, and plate we produce undergoes rigorous testing to ensure it withstands the toughest workouts. We don't just sell equipment; we equip champions.
             </p>
           </div>
           <div className="relative">
-            <div className="aspect-square bg-zinc-100 rounded-2xl overflow-hidden relative shadow-2xl">
+            <div className="aspect-square bg-zinc-100 dark:bg-zinc-800 rounded-2xl overflow-hidden relative shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069&auto=format&fit=crop"
                 alt="Gym Equipment"
@@ -53,11 +53,11 @@ export default function AboutUsPage() {
       </section>
 
       {/* Core Values */}
-      <section className="bg-zinc-50 py-24 px-4">
+      <section className="bg-zinc-50 dark:bg-zinc-900/50 py-24 px-4 transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Our Core Values</h2>
-            <p className="text-zinc-500 max-w-2xl mx-auto text-lg">The principles that drive every product we make and every decision we take.</p>
+            <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto text-lg">The principles that drive every product we make and every decision we take.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -67,12 +67,12 @@ export default function AboutUsPage() {
               { icon: Zap, title: 'Constant Innovation', desc: 'Pushing boundaries in design and function.' },
               { icon: Users, title: 'Community First', desc: 'Supporting the athletes who support us.' }
             ].map((value, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100 hover:shadow-xl transition-all duration-300 group">
-                <div className="w-14 h-14 bg-zinc-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#E5231B] transition-colors duration-300">
-                  <value.icon className="w-7 h-7 text-zinc-900 group-hover:text-white transition-colors duration-300" />
+              <div key={idx} className="bg-white dark:bg-zinc-800/50 p-8 rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-700/50 hover:shadow-xl transition-all duration-300 group">
+                <div className="w-14 h-14 bg-zinc-100 dark:bg-zinc-700/50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#E5231B] transition-colors duration-300">
+                  <value.icon className="w-7 h-7 text-zinc-900 dark:text-zinc-200 group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-zinc-600 leading-relaxed">{value.desc}</p>
+                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>

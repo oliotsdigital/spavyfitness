@@ -1,8 +1,10 @@
 import { useLandingPageState } from './hooks/useLandingPageState';
+import { useTheme } from './hooks/useTheme';
 import Navbar from './components/Navbar';
 import PromoBanner from './components/PromoBanner';
 import SearchOverlay from './components/SearchOverlay';
 import HeroSection from './components/HeroSection';
+import ProductCarousel from './components/ProductCarousel';
 import ProductsSection from './components/ProductsSection';
 import ShippingDealsSection from './components/ShippingDealsSection';
 import CategoryCollectionsSection from './components/CategoryCollectionsSection';
@@ -42,8 +44,10 @@ export default function App() {
     navigateToContact,
   } = useLandingPageState();
 
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="min-h-screen bg-[#111111] text-gray-100 font-sans antialiased flex flex-col">
+    <div className="min-h-screen bg-white dark:bg-[#111111] text-zinc-900 dark:text-gray-100 font-sans antialiased flex flex-col transition-colors duration-300">
       <PromoBanner onSeeDetails={setActiveCategory} />
 
       <Navbar
@@ -60,6 +64,8 @@ export default function App() {
         onOpenContactUs={navigateToContact}
         onNavigateAbout={navigateToAbout}
         onNavigateCategories={navigateToCategory}
+        theme={theme}
+        toggleTheme={toggleTheme}
       />
 
       {isSearchOpen && (
@@ -73,6 +79,7 @@ export default function App() {
       {currentPage === 'home' && (
         <>
           <HeroSection onOpenLiveChat={openLiveChat} />
+          <ProductCarousel />
           <ProductsSection
             activeCategory={activeCategory}
             searchQuery={searchQuery}

@@ -17,6 +17,8 @@ export interface NavbarProps {
   onNavigateHome?: () => void;
   onNavigateAbout?: () => void;
   onNavigateCategories?: () => void;
+  theme?: 'light' | 'dark';
+  toggleTheme?: () => void;
 }
 
 export interface NavbarLogoProps {
@@ -34,6 +36,8 @@ export interface NavbarActionsProps {
   onOpenContactUs: () => void;
   onNavigateAbout?: () => void;
   onNavigateCategories?: () => void;
+  theme?: 'light' | 'dark';
+  toggleTheme?: () => void;
 }
 
 export interface NavbarCategoryMenuProps {

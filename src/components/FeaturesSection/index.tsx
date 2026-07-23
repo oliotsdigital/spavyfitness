@@ -43,7 +43,7 @@ export default function FeaturesSection({ onOpenTracker, onOpenLiveChat }: Featu
   };
 
   return (
-    <section className="bg-zinc-950 border-t border-zinc-800 py-12">
+    <section className="bg-zinc-100 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-800 py-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {FEATURES.map((feature) => {
           const Icon = feature.icon;
@@ -53,13 +53,13 @@ export default function FeaturesSection({ onOpenTracker, onOpenLiveChat }: Featu
             <div
               key={feature.id}
               onClick={isClickable ? () => handleClick(feature.action) : undefined}
-              className={`bg-zinc-900 p-6 rounded border border-zinc-800 ${
-                isClickable ? 'cursor-pointer hover:border-zinc-700 transition' : ''
+              className={`bg-white dark:bg-zinc-900 p-6 rounded-lg border border-zinc-200 dark:border-zinc-800 shadow-sm ${
+                isClickable ? 'cursor-pointer hover:border-zinc-400 dark:hover:border-zinc-700 transition' : ''
               }`}
             >
               <Icon className="w-6 h-6 text-red-500 mb-2" />
-              <h4 className="font-black text-white uppercase text-sm">{feature.title}</h4>
-              <p className="text-xs text-zinc-400 mt-1">{feature.description}</p>
+              <h4 className="font-black text-zinc-900 dark:text-white uppercase text-sm">{feature.title}</h4>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">{feature.description}</p>
             </div>
           );
         })}
