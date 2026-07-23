@@ -14,6 +14,8 @@ import OrderTrackerModal from './components/OrderTrackerModal';
 import LiveChatWidget from './components/LiveChatWidget';
 
 import CategoryPage from './pages/CategoryPage';
+import AboutUsPage from './pages/AboutUsPage';
+import ContactUsPage from './pages/ContactUsPage';
 
 export default function App() {
   const {
@@ -36,6 +38,8 @@ export default function App() {
     closeTracker,
     openLiveChat,
     closeLiveChat,
+    navigateToAbout,
+    navigateToContact,
   } = useLandingPageState();
 
   return (
@@ -53,7 +57,9 @@ export default function App() {
         onNavigateHome={navigateToHome}
         onOpenTracker={openTracker}
         onOpenLiveChat={openLiveChat}
-        onOpenContactUs={openLiveChat}
+        onOpenContactUs={navigateToContact}
+        onNavigateAbout={navigateToAbout}
+        onNavigateCategories={navigateToCategory}
       />
 
       {isSearchOpen && (
@@ -64,7 +70,7 @@ export default function App() {
         />
       )}
 
-      {currentPage === 'home' ? (
+      {currentPage === 'home' && (
         <>
           <HeroSection onOpenLiveChat={openLiveChat} />
           <ProductsSection
@@ -79,7 +85,9 @@ export default function App() {
           <InvitationalSection />
           <FeaturesSection onOpenTracker={openTracker} onOpenLiveChat={openLiveChat} />
         </>
-      ) : (
+      )}
+
+      {currentPage === 'category' && (
         <CategoryPage
           activeCategory={activeCategory}
           searchQuery={searchQuery}
@@ -88,6 +96,10 @@ export default function App() {
           onEnquireNow={openLiveChat}
         />
       )}
+
+      {currentPage === 'about' && <AboutUsPage />}
+
+      {currentPage === 'contact' && <ContactUsPage />}
 
       <Footer onOpenLiveChat={openLiveChat} onOpenTracker={openTracker} />
 

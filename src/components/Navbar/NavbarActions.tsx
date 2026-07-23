@@ -1,19 +1,29 @@
-import { MessageSquare, PhoneCall } from 'lucide-react';
+import { PhoneCall, Info, Grid } from 'lucide-react';
 import type { NavbarActionsProps } from './Navbar.types';
 
 export default function NavbarActions({
-  onOpenLiveChat,
   onOpenContactUs,
+  onNavigateAbout,
+  onNavigateCategories,
 }: NavbarActionsProps) {
   return (
     <div className="flex items-center space-x-6 text-xs text-zinc-700 font-semibold">
-      {/* Live Chat */}
+      {/* About Us */}
       <button
-        onClick={onOpenLiveChat}
+        onClick={onNavigateAbout}
         className="flex items-center space-x-1.5 hover:text-black transition-colors duration-150 focus:outline-none"
       >
-        <MessageSquare className="w-4 h-4 text-zinc-600" />
-        <span>Live Chat</span>
+        <Info className="w-4 h-4 text-zinc-600" />
+        <span>About Us</span>
+      </button>
+
+      {/* Categories */}
+      <button
+        onClick={onNavigateCategories}
+        className="flex items-center space-x-1.5 hover:text-black transition-colors duration-150 focus:outline-none"
+      >
+        <Grid className="w-4 h-4 text-zinc-600" />
+        <span>Categories</span>
       </button>
 
       {/* Contact Us Red Button */}

@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react';
 import type { CategoryId, Product } from '../types';
 
 export interface LandingPageState {
-  currentPage: 'home' | 'category';
+  currentPage: 'home' | 'category' | 'about' | 'contact';
   activeCategory: CategoryId;
   searchQuery: string;
   isSearchOpen: boolean;
@@ -15,6 +15,8 @@ export interface LandingPageState {
 export interface LandingPageActions {
   navigateToHome: () => void;
   navigateToCategory: () => void;
+  navigateToAbout: () => void;
+  navigateToContact: () => void;
   setActiveCategory: (category: CategoryId) => void;
   setSearchQuery: (query: string) => void;
   toggleSearch: () => void;
@@ -28,7 +30,7 @@ export interface LandingPageActions {
 }
 
 export function useLandingPageState(): LandingPageState & LandingPageActions {
-  const [currentPage, setCurrentPage] = useState<'home' | 'category'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'category' | 'about' | 'contact'>('home');
   const [activeCategory, setActiveCategory] = useState<CategoryId>('featured');
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -40,6 +42,14 @@ export function useLandingPageState(): LandingPageState & LandingPageActions {
   const navigateToHome = useCallback(() => setCurrentPage('home'), []);
   const navigateToCategory = useCallback(() => {
     setCurrentPage('category');
+    window.scrollTo(0, 0);
+  }, []);
+  const navigateToAbout = useCallback(() => {
+    setCurrentPage('about');
+    window.scrollTo(0, 0);
+  }, []);
+  const navigateToContact = useCallback(() => {
+    setCurrentPage('contact');
     window.scrollTo(0, 0);
   }, []);
 
@@ -72,6 +82,8 @@ export function useLandingPageState(): LandingPageState & LandingPageActions {
     isLiveChatOpen,
     navigateToHome,
     navigateToCategory,
+    navigateToAbout,
+    navigateToContact,
     setActiveCategory,
     setSearchQuery,
     toggleSearch,

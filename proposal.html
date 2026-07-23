@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260723-05-e9a76f4"}');</script><script src="/_sdk/e358eac22bd01364.telemetry_sdk.js" integrity="sha512-KPxp3rw4K8Nu9ceWJc3gyM7srgaZxiFWOVbyu260EYzzAqdz10mfo5xyXrCx+wEKtGo77JbtmwXvFLbwrGzwvw=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Development Proposal | Oliots Digital</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #17251e;
+      --muted: #5d6d64;
+      --paper: #f6f6ef;
+      --line: #dfe6df;
+      --lime: #d6f455;
+      --forest: #173d2c;
+      --orange: #f36b3b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      width: 100%;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    .page-shell {
+      width: 100%;
+      min-height: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 6% 0%, rgba(214, 244, 85, 0.26), transparent 25rem),
+        radial-gradient(circle at 95% 8%, rgba(243, 107, 59, 0.12), transparent 24rem),
+        var(--paper);
+    }
+
+    .proposal-content {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    .serif { font-family: "Fraunces", serif; }
+
+    .eyebrow {
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .header-line {
+      border-bottom: 1px solid rgba(23, 61, 44, 0.14);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+      border-radius: 2rem;
+      background: var(--forest);
+      box-shadow: 0 30px 70px rgba(16, 51, 36, 0.2);
+    }
+
+    .hero-image-wrap {
+      min-height: 250px;
+      position: relative;
+      order: -1;
+    }
+
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(23, 61, 44, 0.05), rgba(23, 61, 44, 0.78));
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-copy {
+      padding: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .paper-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.78);
+      border-radius: 1.5rem;
+      box-shadow: 0 14px 35px rgba(38, 58, 46, 0.06);
+    }
+
+    .scope-card,
+    .feature-card {
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .scope-card:hover,
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(38, 58, 46, 0.12);
+    }
+
+    .icon-bubble {
+      width: 2.8rem;
+      height: 2.8rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.9rem;
+      background: #eff8ce;
+      color: #244a36;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 680px;
+    }
+
+    th, td {
+      padding: 1.05rem 1.15rem;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: #577065;
+      font-size: 0.72rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .total-row td {
+      border-bottom: none;
+      font-weight: 700;
+    }
+
+    .reveal {
+      animation: rise 600ms ease both;
+    }
+
+    .reveal-delay-1 { animation-delay: 100ms; }
+    .reveal-delay-2 { animation-delay: 200ms; }
+    .reveal-delay-3 { animation-delay: 300ms; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    button:focus-visible {
+      outline: 3px solid #173d2c;
+      outline-offset: 3px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1.12fr 0.88fr;
+      }
+
+      .hero-image-wrap {
+        min-height: 410px;
+        order: initial;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .proposal-content { padding: 1rem; }
+      .hero-grid { border-radius: 1.5rem; }
+      .hero-image-wrap { min-height: 220px; }
+      .hero-copy { padding: 1.5rem 1.25rem; }
+      .icon-bubble { width: 2.4rem; height: 2.4rem; }
+      th, td { padding: 0.75rem 0.85rem; font-size: 0.85rem; }
+      .reveal { animation-duration: 400ms; }
+    }
+
+    @media print {
+      body,
+      .page-shell {
+        background: #ffffff !important;
+      }
+
+      .proposal-content {
+        max-width: none;
+        padding: 0;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .hero-grid,
+      .paper-card {
+        box-shadow: none;
+      }
+
+      .reveal {
+        animation: none !important;
+      }
+    }
+  </style>
+  <script src="/_sdk/935a53bc2e11fb8d.data_sdk.js" type="text/javascript" integrity="sha512-qr2oyPnEys1WebcOABaRh6hG77r5PWpqeWW6JTKbRJqly/INsfBi31CVNlTmHqjgeLpkVmmHZJUdxSx/32tOFQ=="></script>
+  <script src="/_sdk/c939c145c3c74230.editing_sdk.js" type="text/javascript" integrity="sha512-jh2pv/gl9Gzzn5dxfzwQO4wkqtnAQIim+LIUDYfVu2cdqPkQV2MqbjsDUW5IYbrSZFjRlOBrIWzlvWDXQYxOjg=="></script>
+  <script src="/_sdk/6030e540d4419216.resizing_sdk.js" type="text/javascript" integrity="sha512-b5KWzyoXsbWP4smq4sftIi6Kts4YVBpBsz0BwCViwbBJkK64a3/Z6ZMdWA+qnplNcXw4mhZeqvQi3mOosiRJdA=="></script>
+ </head>
+ <body data-template-id="__page-root">
+  <div class="page-shell">
+   <header class="header-line w-full">
+    <div class="proposal-content flex flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between">
+     <div class="min-w-0">
+      <p data-template-id="company-name" class="canva-text text-lg font-bold tracking-tight truncate">OLIOTS DIGITAL PVT. LTD.</p>
+      <p data-template-id="company-tagline" class="canva-text mt-1 text-sm text-[#5d6d64] line-clamp-2">Digital experiences built to perform.</p>
+     </div>
+     <div class="flex flex-wrap items-center gap-2 shrink-0"><span data-template-id="proposal-badge" class="canva-tag rounded-full bg-[#d6f455] px-3 py-1.5 text-xs font-bold text-[#173d2c] whitespace-nowrap">WEBSITE DEVELOPMENT PROPOSAL</span>
+     </div>
+    </div>
+   </header>
+   <main class="proposal-content space-y-8 py-8">
+    <section class="hero-grid reveal" aria-labelledby="proposal-title">
+     <div class="hero-copy flex flex-col justify-between text-white">
+      <div>
+       <p data-template-id="hero-eyebrow" class="canva-text eyebrow text-[#d6f455]">Prepared for Spavy Fitness Equipments Pvt. Ltd.</p>
+       <h1 id="proposal-title" data-template-id="proposal-title" class="canva-text serif mt-4 text-[2.4rem] font-bold leading-[1.05] text-white sm:text-5xl">Enquiry Website Design &amp; Development</h1>
+       <p data-template-id="hero-description" class="canva-text mt-5 max-w-xl text-base leading-7 text-white/80">A conversion-led digital catalogue built to showcase your equipment range, simplify product discovery, and generate high-quality business enquiries.</p>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+       <div class="border-t border-white/20 pt-3 min-w-0">
+        <p data-template-id="prepared-for-label" class="canva-text eyebrow text-white/50">Prepared for</p>
+        <p data-template-id="prepared-for-name" class="canva-text mt-1 font-semibold text-white break-words">Mr. Sangram Mohite · Spavy Fitness</p>
+       </div>
+       <div class="border-t border-white/20 pt-3 min-w-0">
+        <p data-template-id="prepared-by-label" class="canva-text eyebrow text-white/50">Quotation creator</p>
+        <p data-template-id="prepared-by-name" class="canva-text mt-1 font-semibold text-white break-words">Sourabh Pujari · Oliots Digital Pvt. Ltd.</p>
+       </div>
+      </div>
+     </div>
+     <div class="hero-image-wrap"><img data-template-id="hero-image" class="canva-image" loading="lazy" src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="Two people engage in a powerful indoor battle rope workout, showcasing strength and energy.">
+     </div>
+    </section>
+    <section class="paper-card reveal reveal-delay-1 p-6 sm:p-8" aria-labelledby="summary-heading">
+     <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+      <div class="max-w-3xl min-w-0">
+       <p data-template-id="summary-eyebrow" class="canva-text eyebrow text-[#f36b3b]">Executive summary</p>
+       <h2 id="summary-heading" data-template-id="summary-title" class="canva-text serif mt-2 text-3xl font-bold leading-tight">A website built to turn product interest into meaningful enquiries.</h2>
+       <p data-template-id="summary-text" class="canva-text mt-4 leading-7 text-[#5d6d64]">Thank you for the opportunity to present this proposal. Oliots Digital Pvt. Ltd. is excited to collaborate with Spavy Fitness Equipments Pvt. Ltd. on a modern, user-friendly enquiry website. The platform will showcase your fitness equipment range with clarity while enabling visitors to send targeted, product-specific enquiries directly to your team.</p>
+      </div>
+      <div data-template-id="date-panel" class="canva-panel min-w-[170px] rounded-2xl bg-[#eef5e9] p-4 shrink-0">
+       <p data-template-id="date-label" class="canva-text eyebrow text-[#577065]">Proposal date</p>
+       <p data-template-id="date-value" class="canva-text mt-2 font-bold text-[#173d2c]">July 23, 2026</p>
+      </div>
+     </div>
+    </section>
+    <section class="reveal reveal-delay-1" aria-labelledby="scope-heading">
+     <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div class="min-w-0">
+       <p data-template-id="scope-eyebrow" class="canva-text eyebrow text-[#f36b3b]">Project scope &amp; deliverables</p>
+       <h2 id="scope-heading" data-template-id="scope-title" class="canva-text serif mt-2 text-3xl font-bold leading-tight">Everything needed for a high-performing enquiry website.</h2>
+      </div>
+      <p data-template-id="scope-helper" class="canva-text max-w-md text-sm leading-6 text-[#5d6d64]">A focused build that makes your catalogue easy to browse, manage, and enquire about.</p>
+     </div>
+     <div class="mt-6 grid gap-5 md:grid-cols-3">
+      <article data-template-id="scope-card-1" class="canva-card scope-card paper-card p-6">
+       <div class="icon-bubble"><i data-lucide="layout-template" class="h-5 w-5" aria-hidden="true"></i>
+       </div>
+       <p data-template-id="scope-number-1" class="canva-text mt-5 text-sm font-bold text-[#f36b3b]">01</p>
+       <h3 data-template-id="scope-title-1" class="canva-text mt-2 text-xl font-bold">Landing Page &amp; Theme Customization</h3>
+       <p data-template-id="scope-text-1" class="canva-text mt-3 text-sm leading-6 text-[#5d6d64]">Custom UI/UX tailored to fitness equipment, responsive coding for all devices, and a clear category showcase for effortless navigation.</p>
+      </article>
+      <article data-template-id="scope-card-2" class="canva-card scope-card paper-card p-6">
+       <div class="icon-bubble"><i data-lucide="send" class="h-5 w-5" aria-hidden="true"></i>
+       </div>
+       <p data-template-id="scope-number-2" class="canva-text mt-5 text-sm font-bold text-[#f36b3b]">02</p>
+       <h3 data-template-id="scope-title-2" class="canva-text mt-2 text-xl font-bold">Core Pages &amp; Enquiry Setup</h3>
+       <p data-template-id="scope-text-2" class="canva-text mt-3 text-sm leading-6 text-[#5d6d64]">Detailed product page templates, About Us, Contact Us, Terms &amp; Conditions, Privacy Policy, and automated product enquiry email integration.</p>
+      </article>
+      <article data-template-id="scope-card-3" class="canva-card scope-card paper-card p-6">
+       <div class="icon-bubble"><i data-lucide="settings-2" class="h-5 w-5" aria-hidden="true"></i>
+       </div>
+       <p data-template-id="scope-number-3" class="canva-text mt-5 text-sm font-bold text-[#f36b3b]">03</p>
+       <h3 data-template-id="scope-title-3" class="canva-text mt-2 text-xl font-bold">Admin Dashboard &amp; Bulk Upload</h3>
+       <p data-template-id="scope-text-3" class="canva-text mt-3 text-sm leading-6 text-[#5d6d64]">A practical product management dashboard for adding, editing, updating, and deleting products, plus bulk product upload capability.</p>
+      </article>
+     </div>
+    </section>
+    <section class="paper-card reveal reveal-delay-2 p-6 sm:p-8" aria-labelledby="features-heading">
+     <div class="max-w-3xl">
+      <p data-template-id="features-eyebrow" class="canva-text eyebrow text-[#f36b3b]">Included website capabilities</p>
+      <h2 id="features-heading" data-template-id="features-title" class="canva-text serif mt-2 text-3xl font-bold leading-tight">Purpose-built features for an enquiry-driven business.</h2>
+      <p data-template-id="features-description" class="canva-text mt-3 leading-7 text-[#5d6d64]">The platform is structured to give potential buyers the information they need and a simple path to contact your sales team.</p>
+     </div>
+     <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div data-template-id="feature-1" class="canva-card feature-card rounded-2xl border border-[#dfe6df] bg-white p-4"><i data-lucide="search" class="mb-3 h-5 w-5 text-[#173d2c]" aria-hidden="true"></i>
+       <h3 data-template-id="feature-title-1" class="canva-text font-bold">Category-first discovery</h3>
+       <p data-template-id="feature-text-1" class="canva-text mt-1 text-sm leading-6 text-[#5d6d64]">Organised equipment categories that help visitors find the right products quickly.</p>
+      </div>
+      <div data-template-id="feature-2" class="canva-card feature-card rounded-2xl border border-[#dfe6df] bg-white p-4"><i data-lucide="file-text" class="mb-3 h-5 w-5 text-[#173d2c]" aria-hidden="true"></i>
+       <h3 data-template-id="feature-title-2" class="canva-text font-bold">Detailed product pages</h3>
+       <p data-template-id="feature-text-2" class="canva-text mt-1 text-sm leading-6 text-[#5d6d64]">Clear specifications, product highlights, and dedicated enquiry triggers for every item.</p>
+      </div>
+      <div data-template-id="feature-3" class="canva-card feature-card rounded-2xl border border-[#dfe6df] bg-white p-4"><i data-lucide="mail-check" class="mb-3 h-5 w-5 text-[#173d2c]" aria-hidden="true"></i>
+       <h3 data-template-id="feature-title-3" class="canva-text font-bold">Product-specific enquiries</h3>
+       <p data-template-id="feature-text-3" class="canva-text mt-1 text-sm leading-6 text-[#5d6d64]">Enquiry forms carry product context so your team receives more actionable leads.</p>
+      </div>
+      <div data-template-id="feature-4" class="canva-card feature-card rounded-2xl border border-[#dfe6df] bg-white p-4"><i data-lucide="smartphone" class="mb-3 h-5 w-5 text-[#173d2c]" aria-hidden="true"></i>
+       <h3 data-template-id="feature-title-4" class="canva-text font-bold">Responsive user experience</h3>
+       <p data-template-id="feature-text-4" class="canva-text mt-1 text-sm leading-6 text-[#5d6d64]">Optimised layouts for mobile, tablet, and desktop visitors across the buying journey.</p>
+      </div>
+      <div data-template-id="feature-5" class="canva-card feature-card rounded-2xl border border-[#dfe6df] bg-white p-4"><i data-lucide="sliders-horizontal" class="mb-3 h-5 w-5 text-[#173d2c]" aria-hidden="true"></i>
+       <h3 data-template-id="feature-title-5" class="canva-text font-bold">Easy catalogue management</h3>
+       <p data-template-id="feature-text-5" class="canva-text mt-1 text-sm leading-6 text-[#5d6d64]">Admin controls to add, edit, update, delete, and bulk-upload your product information.</p>
+      </div>
+      <div data-template-id="feature-6" class="canva-card feature-card rounded-2xl border border-[#dfe6df] bg-white p-4"><i data-lucide="shield-check" class="mb-3 h-5 w-5 text-[#173d2c]" aria-hidden="true"></i>
+       <h3 data-template-id="feature-title-6" class="canva-text font-bold">Essential trust pages</h3>
+       <p data-template-id="feature-text-6" class="canva-text mt-1 text-sm leading-6 text-[#5d6d64]">About, Contact, Privacy Policy, and Terms pages to create a complete corporate web presence.</p>
+      </div>
+     </div>
+    </section>
+    <section class="reveal reveal-delay-2" aria-labelledby="pricing-heading">
+     <div class="mb-5">
+      <p data-template-id="pricing-eyebrow" class="canva-text eyebrow text-[#f36b3b]">Pricing &amp; investment breakdown</p>
+      <h2 id="pricing-heading" data-template-id="pricing-title" class="canva-text serif mt-2 text-3xl font-bold leading-tight">A clear one-time investment for your website launch.</h2>
+     </div>
+     <div class="paper-card table-wrap">
+      <table aria-label="Website development investment breakdown">
+       <thead>
+        <tr>
+         <th data-template-id="pricing-head-module" class="canva-text">Module / Service</th>
+         <th data-template-id="pricing-head-description" class="canva-text">Description</th>
+         <th data-template-id="pricing-head-investment" class="canva-text">Investment (INR)</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td data-template-id="price-module-1" class="canva-text font-bold">Landing Page &amp; Theme Design</td>
+         <td data-template-id="price-description-1" class="canva-text text-[#5d6d64]">UI/UX design, custom theme coding, category showcase setup</td>
+         <td data-template-id="price-value-1" class="canva-text font-bold">₹6,000</td>
+        </tr>
+        <tr>
+         <td data-template-id="price-module-2" class="canva-text font-bold">Core Pages &amp; Enquiry Setup</td>
+         <td data-template-id="price-description-2" class="canva-text text-[#5d6d64]">Product page, core pages, and product enquiry email integration</td>
+         <td data-template-id="price-value-2" class="canva-text font-bold">₹6,000</td>
+        </tr>
+        <tr>
+         <td data-template-id="price-module-3" class="canva-text font-bold">Admin Dashboard &amp; Bulk Upload</td>
+         <td data-template-id="price-description-3" class="canva-text text-[#5d6d64]">Product edit, update, delete controls and bulk product upload capability</td>
+         <td data-template-id="price-value-3" class="canva-text font-bold">₹4,000</td>
+        </tr>
+        <tr>
+         <td data-template-id="price-module-4" class="canva-text font-bold">Hosting Service</td>
+         <td data-template-id="price-description-4" class="canva-text text-[#5d6d64]">Web hosting setup and deployment for reliable performance and security</td>
+         <td data-template-id="price-value-4" class="canva-text font-bold">₹2,500</td>
+        </tr>
+        <tr data-template-id="total-row" class="canva-table total-row bg-[#173d2c]">
+         <td colspan="2" data-template-id="total-label" class="canva-text text-white">Total One-Time Investment</td>
+         <td data-template-id="total-value" class="canva-text text-[#d6f455]">₹18,500</td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </section>
+    <section data-template-id="maintenance-section" class="canva-section reveal reveal-delay-3 overflow-hidden rounded-[1.75rem]" aria-labelledby="maintenance-heading">
+     <div class="grid md:grid-cols-[0.9fr_1.1fr]">
+      <div class="bg-[#d6f455] p-7 sm:p-9">
+       <p data-template-id="maintenance-eyebrow" class="canva-text eyebrow text-[#31523e]">Post-launch support &amp; maintenance</p>
+       <h2 id="maintenance-heading" data-template-id="maintenance-title" class="canva-text serif mt-3 text-3xl font-bold leading-tight text-[#173d2c]">A smooth, supported launch — and beyond.</h2>
+       <p data-template-id="maintenance-rate" class="canva-text mt-7 text-2xl font-bold text-[#173d2c]">₹399 / month</p>
+       <p data-template-id="maintenance-offer" class="canva-text mt-2 text-sm font-semibold leading-6 text-[#31523e]">Special offer: FREE for the first 6 months. Applicable from the 7th month onwards.</p>
+      </div>
+      <div class="bg-[#173d2c] p-7 text-white sm:p-9">
+       <p data-template-id="maintenance-description" class="canva-text text-base leading-7 text-white/80">Our monthly maintenance plan is designed to keep your website secure, updated, and running smoothly after launch.</p>
+       <div class="mt-7 grid gap-3 sm:grid-cols-2">
+        <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-[#d6f455]" aria-hidden="true"></i>
+         <p data-template-id="maintenance-item-1" class="canva-text text-sm leading-6">Regular database backups</p>
+        </div>
+        <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-[#d6f455]" aria-hidden="true"></i>
+         <p data-template-id="maintenance-item-2" class="canva-text text-sm leading-6">Minor bug fixes</p>
+        </div>
+        <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-[#d6f455]" aria-hidden="true"></i>
+         <p data-template-id="maintenance-item-3" class="canva-text text-sm leading-6">Security updates</p>
+        </div>
+        <div class="flex items-start gap-3"><i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-[#d6f455]" aria-hidden="true"></i>
+         <p data-template-id="maintenance-item-4" class="canva-text text-sm leading-6">Performance monitoring</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="paper-card reveal reveal-delay-3 p-6 sm:p-8" aria-labelledby="terms-heading">
+     <div class="flex flex-col gap-6 md:flex-row md:items-start">
+      <div class="icon-bubble shrink-0"><i data-lucide="scale" class="h-5 w-5" aria-hidden="true"></i>
+      </div>
+      <div class="min-w-0">
+       <p data-template-id="terms-eyebrow" class="canva-text eyebrow text-[#f36b3b]">Important terms &amp; conditions</p>
+       <h2 id="terms-heading" data-template-id="terms-title" class="canva-text serif mt-2 text-3xl font-bold leading-tight">A focused quotation for the scope outlined.</h2>
+       <p data-template-id="terms-text" class="canva-text mt-4 leading-7 text-[#5d6d64]">This proposal serves as a basic quotation covering the deliverables outlined above. Any additional pages, features, integrations, or scope changes requested outside this document will be charged additionally based on the effort required.</p>
+      </div>
+     </div>
+    </section>
+    <footer data-template-id="closing-panel" class="canva-footer reveal rounded-[1.75rem] bg-[#f36b3b] px-7 py-9 text-white sm:px-10">
+     <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-2xl min-w-0">
+       <p data-template-id="closing-eyebrow" class="canva-text eyebrow text-white/70">Ready when you are</p>
+       <h2 data-template-id="closing-title" class="canva-text serif mt-2 text-3xl font-bold leading-tight">Let’s give Spavy Fitness a digital presence that moves with purpose.</h2>
+       <p data-template-id="closing-text" class="canva-text mt-3 leading-7 text-white/85">We look forward to creating a high-performing website that presents your equipment range with clarity and helps your team capture stronger enquiries.</p>
+      </div>
+      <div class="border-l border-white/30 pl-5 shrink-0">
+       <p data-template-id="signature-label" class="canva-text eyebrow text-white/60">Prepared by</p>
+       <p data-template-id="signature-name" class="canva-text mt-2 font-bold">Sourabh Pujari</p>
+       <p data-template-id="signature-company" class="canva-text mt-1 text-sm text-white/80">Oliots Digital Pvt. Ltd.</p>
+      </div>
+     </div>
+    </footer>
+   </main>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      document.getElementById("print-button").addEventListener("click", function () {
+        window.print();
+      });
+    });
+  </script>
+ </body>
+</html>

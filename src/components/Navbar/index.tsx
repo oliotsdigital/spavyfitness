@@ -15,6 +15,8 @@ export default function Navbar({
   onOpenLiveChat,
   onOpenContactUs,
   onNavigateHome,
+  onNavigateAbout,
+  onNavigateCategories,
 }: NavbarProps) {
   // Component state management hook
   const {
@@ -54,8 +56,9 @@ export default function Navbar({
         <div className="hidden lg:flex items-center">
           <NavbarActions
             onOpenTracker={onOpenTracker}
-            onOpenLiveChat={onOpenLiveChat}
             onOpenContactUs={handleContactUsClick}
+            onNavigateAbout={onNavigateAbout}
+            onNavigateCategories={onNavigateCategories}
           />
         </div>
 
@@ -85,12 +88,21 @@ export default function Navbar({
           <div className="flex flex-col space-y-3 pb-2 border-b border-zinc-200">
             <button
               onClick={() => {
-                onOpenLiveChat();
+                if (onNavigateAbout) onNavigateAbout();
                 toggleMobileMenu();
               }}
               className="text-left text-xs font-semibold text-zinc-700 hover:text-black py-1"
             >
-              💬 Live Chat
+              ℹ️ About Us
+            </button>
+            <button
+              onClick={() => {
+                if (onNavigateCategories) onNavigateCategories();
+                toggleMobileMenu();
+              }}
+              className="text-left text-xs font-semibold text-zinc-700 hover:text-black py-1"
+            >
+              🗂️ Categories
             </button>
             <button
               onClick={() => {

@@ -15,6 +15,8 @@ export interface NavbarProps {
   onOpenLiveChat: () => void;
   onOpenContactUs?: () => void;
   onNavigateHome?: () => void;
+  onNavigateAbout?: () => void;
+  onNavigateCategories?: () => void;
 }
 
 export interface NavbarLogoProps {
@@ -29,8 +31,9 @@ export interface NavbarSearchProps {
 
 export interface NavbarActionsProps {
   onOpenTracker: () => void;
-  onOpenLiveChat: () => void;
   onOpenContactUs: () => void;
+  onNavigateAbout?: () => void;
+  onNavigateCategories?: () => void;
 }
 
 export interface NavbarCategoryMenuProps {
